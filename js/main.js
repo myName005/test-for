@@ -5,8 +5,8 @@ var app = new Vue({
 		],
 		input:{
 			name:"",
-			quantity:0,
-			cpu:0
+			quantity:,
+			cpu:
 		}
 	},
 	methods:
@@ -14,6 +14,7 @@ var app = new Vue({
 		addProduct:function () {
 			var product = new Product(this.input);
 			this.productsList.push(product);
+			this.input = input:{ name:"" , quantity:"",cpu:""};//clear input after adding new product
 		}
 	},
 	computed:{
