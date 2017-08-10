@@ -11,8 +11,9 @@ var app = new Vue({
 	},
 	methods:
 	{
-		calculateCost:function (elm) {
-			return elm.cpu * elm.quantity;
+		addProduct:function () {
+			var product = new Product(this.input);
+			this.productsList.push(product);
 		}
 	},
 	computed:{
@@ -21,7 +22,7 @@ var app = new Vue({
 			var total = 0
 			for(var i =0;i<list.length;i++)
 			{
-				total += list[i].cpu * list[i].quantity;
+				total += list[i].cost();
 			}
 			return total;
 		}

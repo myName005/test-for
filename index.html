@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+
+	<script type="text/javascript" src="js/Product.js"></script>
 </head>
 <body>
 	<div id="app" class="container">
@@ -27,7 +29,7 @@
 						<td>{{elm.name}}</td>
 						<td>{{elm.cpu}}</td>
 						<td>{{elm.quantity}}</td>
-						<td>{{calculateCost(elm)}}</td>
+						<td>{{elm.cost()}}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -54,7 +56,7 @@
 					placeholder="Quantity" v-model="input.quantity">
 			</div>
 			<div class="col-md-3">
-				<button class="btn btn-primary" >Add</button>
+				<button class="btn btn-primary"  v-on:click="addProduct">Add</button>
 			</div>
 		</div>
 	</div>
