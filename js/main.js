@@ -32,6 +32,9 @@ var app = new Vue({
 				total += list[i].cost();
 			}
 			return total;
+		},
+		productsListEmpty:function () {
+			return this.productsList.length == 0;
 		}
 
 	}
