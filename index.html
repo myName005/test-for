@@ -2,13 +2,69 @@
 <html>
 <head>
 	<title>Cash Calculator</title>
+	+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
 
 	<script src="https://unpkg.com/vue"></script>
 </head>
 <body>
+	<div id="app" class="container">
+		<div class="row">
+			<table class="table table-striped">
+				<thead>
+					<th>Index</th>
+					<th>Name</th>
+					<th>Cost Per Unit</th>
+					<th>Quantity</th>
+					<th>Cost</th>
+				</thead>
+				<tbody>
+					<tr v-for="(i,elm) in productsList">
+						<td>{{i}}</td>
+						<td>{{elm.name}}</td>
+						<td>{{elm.cpu}}</td>
+						<td>{{elm.quantity}}</td>
+						<td>{{calculateCost(elm)}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-	
+		<div class="row">
+			Total Cost : {{totalCost}}	
+		</div>
+		
+		<div class="row">
+			
+			<div class="col-md-3">
+				<input type="text" class="form-control" 
+					placeholder="Name" v-model="input.name">
+			</div>
+
+			<div class="col-md-3">
+				<input type="number" class="form-control" 
+					placeholder="Cost Per Unit" v-model="input.cpu">
+			</div>
+			
+			<div class="col-md-3">
+				<input type="number" class="form-control" step="0.01" 
+					placeholder="Quantity" v-model="input.quantity">
+			</div>
+			<div class="col-md-3">
+				<button class="btn btn-primary" >Add</button>
+			</div>
+		</div>
+	</div>
+
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
