@@ -1,12 +1,11 @@
 var app = new Vue({
 	el:"#app",
 	data:{
-		productsList:[
-		],
+		productsList:[],
 		input:{
 			name:"",
-			quantity:,
-			cpu:
+			quantity:"",
+			cpu:""
 		}
 	},
 	methods:
@@ -14,8 +13,15 @@ var app = new Vue({
 		addProduct:function () {
 			var product = new Product(this.input);
 			this.productsList.push(product);
-			this.input = input:{ name:"" , quantity:"",cpu:""};//clear input after adding new product
+			this.input = { name:"" , quantity:"",cpu:""};//clear input after adding new product
+		},
+		clearProducts:function () {
+			this.productsList =[];
+		},
+		deleteProduct:function (index) {
+			this.productsList.splice(index,1);
 		}
+
 	},
 	computed:{
 		totalCost: function () {

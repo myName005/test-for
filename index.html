@@ -36,6 +36,9 @@
 						<td>{{elm.cpu}}</td>
 						<td>{{elm.quantity}}</td>
 						<td>{{elm.cost()}}</td>
+						<td>
+							<button class="btn btn-danger" v-on:click="deleteProduct(i)">Delete</button>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -63,6 +66,7 @@
 			</div>
 			<div class="col-md-3">
 				<button class="btn btn-primary"  v-on:click="addProduct">Add</button>
+				<button class="btn btn-danger" v-on:click="clearProducts">Clear</button>
 			</div>
 		</div>
 	</div>
