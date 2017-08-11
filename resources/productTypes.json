@@ -1,0 +1,5 @@
+[
+	{"name":"egg","cpu":10},
+	{"potato":"egg","cpu":50},
+	{"tenisball":"egg","cpu":50}
+]
